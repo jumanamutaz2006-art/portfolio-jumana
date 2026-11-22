@@ -1,0 +1,945 @@
+
+:root {
+  --primary: #51017C;
+  --secondary: #711E7B;
+  --background: #330C4B;
+  --text: #EEDAA5;
+  --accent: #B9379D;
+  --support: #E3A88A;
+  --nav-height: 64px;                             /* height of the sticky navigation bar */
+}
+
+
+/* ---------- Page basics ---------- */
+html {
+  scroll-behavior: smooth;                        /* smooth scrolling when a nav link is clicked */
+}
+
+body {
+  margin: 0;                                      /* remove the default browser margin */
+  background-color: var(--background);            /* Background color */
+  color: var(--text);                             /* Text color */
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;                               /* space between lines for easy reading */
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;                          /* small space between letters */
+}
+
+a {
+  color: var(--support);
+  cursor: pointer;                                /* hand cursor on every link */
+}
+
+a:hover {
+  color: #FFFFFF;
+}
+
+
+/* ---------- Navigation bar (horizontal and sticky) ---------- */
+.site-nav {
+  position: sticky;                               /* stays at the top while scrolling */
+  top: 0;
+  z-index: 100;                                   /* keeps the bar above other content */
+  height: var(--nav-height);
+  background-color: var(--background);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.nav-inner {
+  display: flex;                                  /* logo on the left, links on the right */
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 40px);                       /* full width minus 20px on each side */
+  max-width: 1100px;
+  height: 100%;
+  margin: 0 auto;                                 /* center the bar content */
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-logo::after {
+  content: "*";                                   /* colored dot after every section title */
+  color: var(--accent);
+}
+.nav-logo::before {
+  content: "*";                                   /* colored dot after every section title */
+  color: var(--accent);
+}
+
+.nav-logo:hover {
+  color: var(--text);
+}
+
+.nav-list {
+  display: flex;                                  /* puts the links side by side */
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;                          /* remove the bullet points */
+}
+
+.nav-open,
+.nav-close {
+  display: none;                                  /* the burger buttons only appear on phones */
+}
+
+.nav-link {
+  display: block;
+  padding: 8px 14px;
+  border-radius: 20px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;                          /* no underline in the menu */
+}
+
+.nav-link:hover {
+  background-color: var(--accent);
+  color: #FFFFFF;
+}
+
+.nav-link:focus {
+  outline: 3px solid var(--support);              /* visible outline for keyboard users */
+  outline-offset: 2px;
+}
+
+
+/* ---------- Hero (background image, text on the left, photo on the right) ---------- */
+.hero {
+  background-color: var(--primary);               /* fallback color */
+  background-image: url("assets/images/hero-bg.svg");
+  background-size: cover;                         /* image covers the whole hero */
+  background-position: center;                    /* keep the image centered */
+  background-repeat: no-repeat;                   /* show the image only once */
+  box-sizing: border-box;
+  min-height: calc(100vh - var(--nav-height));    /* nav + hero fill the first screen */
+  scroll-margin-top: var(--nav-height);           /* the Home link scrolls to the very top, so the nav bar does not cover the hero */
+  padding: clamp(16px, 3vh, 40px) max(20px, calc((100% - 1100px) / 2)) clamp(24px, 7vh, 70px);  /* less space on top than at the bottom, so the content sits a little higher; the sides keep it centered */
+  display: grid;                                  /* two columns: text | photo */
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+  column-gap: 60px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--support);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;                      /* small spaced capital label */
+}
+
+.hero-title {
+  margin: 0 0 clamp(10px, 2.2vh, 18px);
+  font-size: clamp(30px, 7.2vh, 50px);            /* grows with the screen height, never bigger than 50px */
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--support);
+}
+
+.hero-text {
+  max-width: 560px;
+  margin: 0 0 clamp(14px, 3vh, 28px);
+  font-size: clamp(14px, 2.6vh, 17px);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;                                /* buttons drop to the next line on small screens */
+  gap: 12px;
+  margin-bottom: clamp(16px, 4vh, 34px);
+}
+
+.hero-buttons .btn {
+  padding-top: clamp(8px, 1.6vh, 12px);
+  padding-bottom: clamp(8px, 1.6vh, 12px);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.hero-stats strong {
+  display: block;
+  color: var(--support);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(26px, 4.4vh, 34px);
+  line-height: 1.1;
+}
+
+.hero-stats span {
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.85;                                  /* softer label text */
+}
+
+.hero-photo {
+  justify-self: center;
+  text-align: center;
+}
+
+.profile-pic {
+  width: clamp(150px, 40vh, 260px);               /* photo shrinks on short screens */
+  height: clamp(150px, 40vh, 260px);
+  border: 6px solid var(--support);
+  border-radius: 50%;                             /* makes the picture a circle */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);     /* soft shadow */
+}
+
+.badge {
+  display: block;
+  width: fit-content;
+  margin: clamp(10px, 2vh, 18px) auto 0;
+  background-color: var(--accent);                /* Accent color */
+  color: #FFFFFF;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #FFFFFF;
+  padding: 12px 28px;
+  border: 2px solid var(--accent);
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;                                /* hand cursor on clickable items */
+}
+
+.btn:hover {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  color: #FFFFFF;
+  opacity: 0.9;                                   /* slightly see-through on hover */
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--support);
+  color: var(--text);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background-color: var(--support);
+  border-color: var(--support);
+  color: var(--background);
+}
+
+
+/* ---------- Project details page (colleague.html) ---------- */
+.detail-hero {
+  background-color: var(--primary);               /* fallback color */
+  background-image: url("assets/images/hero-bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding: 70px max(20px, calc((100% - 1100px) / 2)) 60px;
+  display: grid;                                  /* text on the left, logo on the right */
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 50px;
+}
+
+.detail-logo {
+  width: 260px;
+  height: auto;
+  border: 4px solid var(--support);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.detail-hero .hero-title {
+  max-width: 800px;
+}
+
+.detail-hero .hero-buttons {
+  margin-bottom: 0;
+}
+
+.detail-section {
+  scroll-margin-top: 0;
+}
+
+.detail-figure {
+  float: right;                                   /* picture sits on the right, text wraps around it */
+  width: 42%;
+  margin: 0 0 20px 32px;
+}
+
+.detail-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--support);
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.detail-section p {
+  max-width: 640px;
+}
+
+.detail-section .skill-card p {
+  margin: 0 0 6px;
+}
+
+.detail-section + .detail-section {
+  clear: both;                                    /* second section starts below the floated picture */
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.gallery-item {
+  margin: 0;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 3px solid var(--support);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-item figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+
+/* ---------- Technologies strip ---------- */
+.tech-strip {
+  background-color: var(--primary);
+  border-top: 2px solid var(--support);
+  border-bottom: 2px solid var(--support);
+  padding: 22px 20px;
+  text-align: center;
+}
+
+.tech-heading {
+  margin: 0 0 10px;
+  color: var(--support);
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.tech-list li {
+  padding: 6px 20px;
+  border: 1px solid var(--support);
+  border-radius: 20px;
+  background-color: var(--background);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* ---------- Sections ---------- */
+.section {
+  width: calc(100% - 40px);                       /* full width minus 20px on each side */
+  max-width: 1100px;
+  margin: 0 auto;                                 /* center the content */
+  padding: 64px 0 16px;
+  scroll-margin-top: calc(var(--nav-height) - 36px);  /* heading stays visible under the sticky nav */
+}
+
+.section-title {
+  margin: 0 0 10px;
+  font-size: 40px;
+}
+
+.section-title::after {
+  content: "*";                                   /* colored dot after every section title */
+  color: var(--accent);
+}
+.section-title::before {
+  content: "*";                                   /* colored dot after every section title */
+  color: var(--accent);
+}
+.section-subtitle {
+  margin: 0 0 30px;
+  opacity: 0.85;
+}
+
+.card {
+  background-color: rgba(81, 1, 124, 0.4);        /* Primary color, see-through */
+  border: 2px solid rgba(227, 168, 138, 0.45);    /* Support color, softer */
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  overflow: hidden;                               /* keeps images inside the rounded corners */
+  transition: transform 0.25s, box-shadow 0.25s;  /* smooth hover animation */
+}
+
+.card:hover {
+  transform: translateY(-6px);                    /* card lifts up on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+}
+
+.card h3 {
+  margin: 10px 0;
+  color: var(--text);
+  font-size: 21px;
+}
+
+
+/* ---------- Works (project cards) ---------- */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));  /* two cards per row on desktop, one on small screens */
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.project-img {
+  display: block;
+  width: 100%;
+  height: auto;                                   /* ignore the height attribute so the ratio below is used */
+  aspect-ratio: 16 / 9;                           /* every card image has the same shape */
+  object-fit: cover;                              /* crops the image instead of stretching it */
+  border-bottom: 2px solid rgba(227, 168, 138, 0.45);
+}
+
+.card-body {
+  padding: 8px 24px 20px;
+}
+
+.tag,
+.status {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 2px 14px;
+  border: 1px solid var(--support);
+  border-radius: 14px;
+  color: var(--support);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.project-tools {
+  margin: 0 0 14px;
+  color: var(--support);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.card-link {
+  display: inline-block;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: underline;
+}
+
+.card-link:hover {
+  color: var(--accent);
+}
+
+
+/* ---------- Skills ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+  gap: 22px;
+}
+
+.skill-card {
+  padding: 8px 24px 22px;
+}
+
+.skills-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: square;                        /* square bullets */
+  line-height: 2;
+}
+
+.goals-list {
+  margin: 0;
+  padding-left: 30px;
+  list-style-type: decimal-leading-zero;          /* 01, 02, 03 ... */
+  line-height: 2;
+}
+
+
+/* ---------- About Me: floated JSON box ---------- */
+.profile-json {
+  float: right;                                   /* box sits on the right, text wraps around it */
+  width: 38%;
+  box-sizing: border-box;
+  margin: 0 0 20px 32px;
+  padding: 0 0 6px;
+  background-color: #1F0630;                      /* darker shade of the Background color */
+  border: 2px solid var(--support);
+  border-radius: 12px;
+  overflow: hidden;                               /* keeps the title bar inside the rounded corners */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.json-title {
+  margin: 0;
+  padding: 8px 18px;
+  background-color: var(--secondary);
+  color: var(--text);
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 13px;
+}
+
+.profile-json pre {
+  margin: 0;
+  padding: 14px 18px;
+  overflow-x: auto;                               /* scroll sideways if a line is too long */
+  color: var(--support);
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+#about p {
+  max-width: 640px;
+}
+
+#certificates,
+#resources {
+  clear: both;                                    /* stops the float so Resources starts below About */
+}
+
+
+/* ---------- Certificates ---------- */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));  /* three per row on desktop */
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.cert-card a {
+  display: block;
+  cursor: pointer;                                /* the picture opens full size */
+}
+
+.cert-img {
+  display: block;
+  width: 100%;
+  height: auto;                                   /* the whole certificate stays visible */
+  background-color: #FFFFFF;
+  border-bottom: 2px solid rgba(227, 168, 138, 0.45);
+}
+
+.cert-card a:hover .cert-img {
+  opacity: 0.85;                                  /* hint that it can be clicked */
+}
+
+.cert-card p {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+
+/* ---------- Resources ---------- */
+.resources-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;                             /* list starts right under the title instead of floating in the middle */
+  margin-top: 16px;
+}
+
+.resources-list {
+  margin: 0;
+  padding-left: 22px;
+  list-style-type: circle;
+  line-height: 2;
+}
+
+.favorite-figure {
+  margin: -90px 0 0;                              /* pulls the picture up, level with the section title */
+  text-align: center;
+}
+
+.favorite-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border: 3px solid var(--support);
+  border-radius: 12px;
+}
+
+.favorite-figure figcaption {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* ---------- Contact ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 40px;
+  margin-top: 24px;
+}
+
+.channels {
+  margin: 24px 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.channels li {
+  margin-bottom: 18px;
+}
+
+.contact-grid > * {
+  min-width: 0;                                   /* lets grid items shrink instead of pushing the page wider */
+}
+
+.channels a {
+  overflow-wrap: anywhere;                        /* a long email address breaks onto a new line on tiny screens */
+}
+
+.channel-label {
+  display: block;
+  color: var(--support);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.contact-form {
+  padding: 28px;
+  background-color: rgba(81, 1, 124, 0.4);
+  border: 2px solid rgba(227, 168, 138, 0.45);
+  border-radius: 16px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--support);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.contact-form input,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;                         /* padding and border stay inside the width */
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  background-color: var(--background);
+  border: 2px solid rgba(227, 168, 138, 0.45);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 15px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 3px solid var(--accent);               /* clear highlight when typing */
+  border-color: var(--support);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: 40px;
+  padding: 25px 20px;
+  background-color: #1F0630;
+  border-top: 2px solid var(--support);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 4px 0;
+  opacity: 0.85;                                  /* softer text in the footer */
+}
+
+
+/* ==========================================================
+   Responsive design
+   ========================================================== */
+
+/* Tablets and small laptops */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;                   /* one column: photo on top, text below */
+    row-gap: 30px;
+    text-align: center;
+  }
+
+  .hero-photo {
+    order: -1;                                    /* photo moves above the text */
+  }
+
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-title {
+    font-size: clamp(30px, 6vw, 44px);
+  }
+
+  .hero-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons,
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .resources-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .favorite-figure {
+    margin-top: 0;                                /* one column: no need to pull the picture up */
+  }
+
+  .detail-hero {
+    grid-template-columns: 1fr;                   /* logo goes above the text */
+    row-gap: 28px;
+    text-align: center;
+  }
+
+  .detail-logo {
+    order: -1;
+    justify-self: center;
+    width: 200px;
+  }
+
+  .detail-hero .hero-buttons {
+    justify-content: center;
+  }
+
+  .detail-hero .hero-title,
+  .detail-hero .hero-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Burger menu: used below 860px, because seven links no longer fit next to the logo */
+@media (max-width: 860px) {
+  /* Navigation: logo on the left, burger button on the right.
+     The links stay hidden until the burger is tapped. This uses :target, so no JavaScript is needed,
+     and the menu closes by itself when a link is tapped. */
+  .nav-open,
+  .nav-close {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 30px;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .nav-close {
+    display: none;                                /* shown only while the menu is open */
+  }
+
+  .bar {
+    display: block;
+    width: 22px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--text);
+  }
+
+  .nav-list {
+    display: none;                                /* menu hidden by default */
+    position: absolute;                           /* drops down under the bar */
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0;
+    background-color: var(--background);
+    border-top: 1px solid rgba(227, 168, 138, 0.4);
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-list:target {
+    display: flex;                                /* the menu is open when its id is in the address (#menu) */
+    scroll-margin-top: var(--nav-height);         /* stops the page from jumping when the menu opens */
+  }
+
+  .nav-list:target ~ .nav-open {
+    display: none;                                /* swap the burger for the X */
+  }
+
+  .nav-list:target ~ .nav-close {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 14px 20px;
+    border-radius: 0;
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
+/* Phones */
+@media (max-width: 700px) {
+  /* Smaller photo and tighter hero on phones */
+  .hero {
+    padding-top: 28px;
+    padding-bottom: 36px;
+    row-gap: 18px;
+  }
+
+  .profile-pic {
+    width: 130px;
+    height: 130px;
+    border-width: 4px;
+  }
+
+  .badge {
+    margin-top: 12px;
+    padding: 4px 14px;
+    font-size: 13px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .hero-stats {
+    gap: 24px;
+  }
+
+  /* Floated box and picture become full-width blocks above the text */
+  .profile-json,
+  .detail-figure {
+    float: none;
+    width: auto;
+    margin: 0 0 24px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+}
+
+
+/* ==========================================================
+   Scroll reveal: content fades in and slides up while you scroll down to it.
+   CSS only (scroll-driven animation). Browsers that do not support it simply show everything normally.
+   ========================================================== */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px);                  /* starts lower and invisible */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);                     /* ends in its normal place */
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {   /* skipped for people who turn animations off */
+    .section .eyebrow,
+    .section-title,
+    .section-subtitle,
+    .card,
+    .profile-json,
+    #about p,
+    .detail-section p,
+    .resources-list,
+    .favorite-figure,
+    .contact-info,
+    .contact-form,
+    .gallery-item,
+    .detail-figure,
+    .tech-strip {
+      animation: reveal linear backwards;         /* "backwards": invisible before it starts, normal after it ends */
+      animation-timeline: view();                 /* progress follows the element entering the screen */
+      animation-range: entry 0% entry 60%;        /* finished when 60% of the element is on screen */
+    }
+  }
+}

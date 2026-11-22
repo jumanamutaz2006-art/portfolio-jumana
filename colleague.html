@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Colleague is a college guidance web platform for Egyptian high school students, built as a team project with HTML, CSS, and JavaScript.">
+    <title>Colleague: College Guidance Platform | Jumana Moutaz</title>
+
+    <!-- Google Fonts: Playfair Display (headings) and Poppins (body text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- External stylesheet (shared with the main page) -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a class="nav-logo" href="index.html#home">Jumana</a>
+        <ul class="nav-list" id="menu">
+          <li><a class="nav-link" href="index.html#home">Home</a></li>
+          <li><a class="nav-link" href="index.html#works">Works</a></li>
+          <li><a class="nav-link" href="index.html#skills">Skills</a></li>
+          <li><a class="nav-link" href="index.html#about">About</a></li>
+          <li><a class="nav-link" href="index.html#certificates">Certificates</a></li>
+          <li><a class="nav-link" href="index.html#resources">Resources</a></li>
+          <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+        <!-- Burger button (phones only): opens and closes the menu without JavaScript -->
+        <a class="nav-open" href="#menu" aria-label="Open menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></a>
+        <a class="nav-close" href="#closed" aria-label="Close menu">&times;</a>
+      </div>
+    </nav>
+
+    <header class="detail-hero">
+      <div class="detail-hero-text">
+        <p class="eyebrow">Project details</p>
+        <h1 class="hero-title">Colleague: <span class="highlight">College Guidance</span> Platform</h1>
+        <p class="hero-text">
+          A web platform that helps Egyptian high school students choose the
+          right college, with everything they need to compare options in one place.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn" href="index.html#works">&larr; Back to Projects</a>
+        </div>
+      </div>
+      <img class="detail-logo" src="assets/images/colleague-logo.png" alt="Colleague logo: a round badge with a graduation cap, stars, a laurel branch and an atom, with the slogan Your Future's Compass" width="798" height="582">
+    </header>
+
+    <main>
+      <section class="section detail-section" aria-labelledby="overview-heading">
+        <figure class="detail-figure">
+          <img class="detail-img" src="assets/images/colleague-landing.png" alt="Colleague landing page with the logo, the title Colleague, the slogan Your Future's Compass, and a Get Started button" width="820" height="442">
+        </figure>
+
+        <p class="eyebrow">What it is</p>
+        <h2 class="section-title" id="overview-heading">Overview</h2>
+        <p>
+          Colleague is a web platform for Egyptian high school students who
+          are choosing a college. Instead of searching many different websites,
+          students can find the information they need in one place and compare
+          colleges that fit their academic track: Scientific, Literary, or Mathematics.
+        </p>
+        <p>
+          It was a team project. I worked on it with
+          <a href="https://yazedhamdy62-wq.github.io/portfolio/" target="_blank" rel="noopener">Yazed</a>
+          and our teammates.
+        </p>
+      </section>
+
+      <section class="section detail-section" aria-labelledby="breakdown-heading">
+        <p class="eyebrow">How it works</p>
+        <h2 class="section-title" id="breakdown-heading">The Project at a Glance</h2>
+
+        <div class="skills-grid">
+          <article class="card skill-card">
+            <span class="status">Problem</span>
+            <h3>Scattered Information</h3>
+            <p>
+              College details are spread across different websites and
+              sources, so comparing options takes a lot of time and effort.
+            </p>
+          </article>
+
+          <article class="card skill-card">
+            <span class="status">Features</span>
+            <h3>What It Offers</h3>
+            <ul class="skills-list">
+              <li>Colleges organized by academic track</li>
+              <li>A short guide to each major with a Learn More button</li>
+              <li>Requirements, study programs, and departments</li>
+              <li>Tools students may need during their studies</li>
+              <li>An About Us page and a Login button</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card">
+            <span class="status">Tech</span>
+            <h3>Tech Stack</h3>
+            <ul class="skills-list">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card">
+            <span class="status">Team</span>
+            <h3>Team Project</h3>
+            <p>
+              Built together with Yazed and our teammates as a group project.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section detail-section" aria-labelledby="screens-heading">
+        <p class="eyebrow">A look inside</p>
+        <h2 class="section-title" id="screens-heading">Screenshots</h2>
+
+        <div class="gallery">
+          <figure class="gallery-item">
+            <img src="assets/images/colleague-home.png" alt="Colleague home page with a navigation bar showing Home, About Us and Login, and a Get Started button" width="817" height="451">
+            <figcaption>Home page with the navigation bar</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="assets/images/colleague-tracks.png" alt="Three cards for the Scientific, Literary and Mathematics tracks, each with a description and a Learn More button" width="805" height="453">
+            <figcaption>Academic tracks: Scientific, Literary, and Mathematics</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="assets/images/colleague-about.png" alt="About Us page with three cards: Clarity, Self-Discovery and Future Readiness, over a blurred library" width="805" height="420">
+            <figcaption>About Us page: Clarity, Self-Discovery, Future Readiness</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Thank you for visiting my page!</p>
+      <p>Jumana Moutaz | Business Information Systems | Capital University</p>
+    </footer>
+  </body>
+</html>

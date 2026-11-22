@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="260" viewBox="0 0 400 260" role="img">
+  <title>Browser window with HTML code brackets</title>
+  <rect width="400" height="260" fill="#EEDAA5"/>
+  <rect x="30" y="30" width="340" height="200" rx="12" fill="#ffffff" stroke="#51017C" stroke-width="3"/>
+  <rect x="30" y="30" width="340" height="36" rx="12" fill="#51017C"/>
+  <circle cx="54" cy="48" r="6" fill="#ffffff"/>
+  <circle cx="76" cy="48" r="6" fill="#ffffff"/>
+  <circle cx="98" cy="48" r="6" fill="#ffffff"/>
+  <text x="200" y="152" font-family="Consolas, monospace" font-size="64" font-weight="bold" fill="#51017C" text-anchor="middle">&lt;/&gt;</text>
+  <text x="200" y="200" font-family="Arial, sans-serif" font-size="18" fill="#330C4B" text-anchor="middle">Web Docs</text>
+</svg>

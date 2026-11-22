@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Jumana Moutaz, a Business Information Systems student at Capital University learning Python, AI, and web development.">
+    <title>Jumana Moutaz | Business Information Systems Student</title>
+
+    <!-- Google Fonts: Playfair Display (headings) and Poppins (body text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <!-- Navigation bar: logo on the left, links on the right -->
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a class="nav-logo" href="#home">Jumana</a>
+        <ul class="nav-list" id="menu">
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#works">Works</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#certificates">Certificates</a></li>
+          <li><a class="nav-link" href="#resources">Resources</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <!-- Burger button (phones only): opens and closes the menu without JavaScript -->
+        <a class="nav-open" href="#menu" aria-label="Open menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></a>
+        <a class="nav-close" href="#closed" aria-label="Close menu">&times;</a>
+      </div>
+    </nav>
+
+    <!-- Hero: text on the left, photo on the right -->
+    <header class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">Business Information Systems Student</p>
+        <h1 class="hero-title">Hi, I'm Jumana. I build <span class="highlight">web pages</span> and I am Front-End Developer.</h1>
+        <p class="hero-text">
+          Third-year student at Capital University with hands-on training in
+          Python, AI, and data analysis. I led the Devology team to first
+          place at the SCCI Conference, and now I am an IT member at SCCI.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn" href="#works">View Projects &rarr;</a>
+          <a class="btn btn-outline" href="assets/Jumana_Mutaz_CV.pdf" download>Get My CV</a>
+          <a class="btn btn-outline" href="#contact">Contact Me</a>
+        </div>
+
+        <ul class="hero-stats">
+          <li><strong>3</strong><span>Projects built</span></li>
+          <li><strong>1st</strong><span>Place at SCCI</span></li>
+          <li><strong>3.37</strong><span>GPA in Level 2</span></li>
+        </ul>
+      </div>
+
+      <div class="hero-photo">
+        <img class="profile-pic" src="assets/images/WhatsApp Image 2026-11-02 at 1.34.08 PM.png" alt="Profile picture placeholder showing the initials JM" width="260" height="260">
+        <span class="badge">Available for Work</span>
+      </div>
+    </header>
+
+    <!-- Technologies strip -->
+    <section class="tech-strip" aria-labelledby="tech-heading">
+      <h2 class="tech-heading" id="tech-heading">Tech I use</h2>
+      <ul class="tech-list">
+        <li>Python</li>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Excel</li>
+      </ul>
+    </section>
+
+    <main>
+      <section class="section" id="works" aria-labelledby="works-heading">
+        <p class="eyebrow">What I've built</p>
+        <h2 class="section-title" id="works-heading">Selected Works</h2>
+
+        <div class="works-grid">
+          <article class="card project-card">
+            <img class="project-img" src="assets/images/scci-preview.svg" alt="Illustration of a website window connected to a database, labeled front-end, back-end and SCCI" width="640" height="360">
+            <div class="card-body">
+              <span class="tag">In Progress</span>
+              <h3>SCCI Website System</h3>
+              <p>
+                As an IT member at SCCI, I am working on the SCCI website
+                system, building both the front-end and the back-end with the
+                IT team.
+              </p>
+              <p class="project-tools">front-end &middot; back-end &middot; team project &middot; in progress</p>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img class="project-img" src="assets/images/halo-logo-circle.png" alt="Illustration of the Halo smart home-safety car with a sensor on top" width="640" height="360">
+            <div class="card-body">
+              <span class="tag">Full-Stack</span>
+              <h3>Halo: Smart Home-Safety Car</h3>
+              <p>
+                A full-stack website for a smart home-safety car that uses
+                sensors to detect fire and gas leaks, sounds an alert buzzer,
+                avoids obstacles, and uses a water pump to put out small fires.
+                I led the Devology team and developed the front-end.
+              </p>
+              <p class="project-tools">full-stack &middot; my part: front-end &middot; 1st place</p>
+              <a class="card-link" href="https://github.com/ziadkk2005/Final-Linked-Halo-Project" target="_blank" rel="noopener">View the code on GitHub &rarr;</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img class="project-img" src="assets/images/colleague-logo-card.png" alt="Colleague logo: a round badge with a graduation cap, stars, a laurel branch and an atom, with the slogan Your Future's Compass" width="1066" height="600">
+            <div class="card-body">
+              <span class="tag">Web Platform</span>
+              <h3>Colleague: College Guidance Platform</h3>
+              <p>
+                A web platform that helps Egyptian high school students choose
+                the right college. It gathers requirements, programs, and
+                departments in one place, organized by academic track:
+                Scientific, Literary, or Mathematics.
+              </p>
+
+              <p class="project-tools">html &middot; css &middot; js &middot; team project</p>
+              <a class="card-link" href="colleague.html">See project details &rarr;</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <img class="project-img" src="assets/images/portfolio-preview.svg" alt="Illustration of a portfolio page inside a browser window" width="640" height="360">
+            <div class="card-body">
+              <span class="tag">Web Design</span>
+              <h3>This Portfolio</h3>
+              <p>
+                My personal portfolio, a responsive layout, and a custom
+                purple design system written in plain CSS.
+              </p>
+              <p class="project-tools">html &middot; css &middot; semantic &middot; seo</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="skills" aria-labelledby="skills-heading">
+        <p class="eyebrow">What I work with</p>
+        <h2 class="section-title" id="skills-heading">Skills</h2>
+        <p class="section-subtitle">The tools I use today and the ones I am working towards.</p>
+
+        <div class="skills-grid">
+          <article class="card skill-card">
+            <span class="status">Core</span>
+            <h3>Web Development</h3>
+            <ul class="skills-list">
+              <li>HTML5 and semantic markup</li>
+              <li>CSS3 and responsive layout</li>
+              <li>JavaScript (beginner)</li>
+              <li>Back-end development (in progress)</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card">
+            <span class="status">Learning</span>
+            <h3>Programming and Data</h3>
+            <ul class="skills-list">
+              <li>Python</li>
+              <li>Data analysis</li>
+              <li>AI and machine learning basics</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card">
+            <span class="status">Workflow</span>
+            <h3>Tools and Teamwork</h3>
+            <ul class="skills-list">
+              <li>Word, Excel, PowerPoint</li>
+              <li>Team leadership</li>
+              <li>Active listening</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card">
+            <span class="status">Next</span>
+            <h3>My Learning Goals</h3>
+            <ol class="goals-list">
+              <li>Modern responsive CSS</li>
+              <li>JavaScript for interactivity</li>
+              <li>Python for data analysis</li>
+              <li>Machine learning for business</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-heading">
+        <p class="eyebrow">Who I am</p>
+        <h2 class="section-title" id="about-heading">About Me</h2>
+
+        <aside class="profile-json" aria-label="Profile summary">
+          <p class="json-title">jumana_profile.json</p>
+<pre><code>{
+  "name": "Jumana Moutaz",
+  "role": "BIS Student",
+  "university": "Capital University",
+  "level": 3,
+  "gpa": "3.37 / 4.0",
+  "scci": "IT Member",
+  "internship": "Crédit Agricole",
+  "focus": ["Python", "AI", "Web"],
+  "languages": ["Arabic", "English B2"],
+  "location": "Cairo, Egypt"
+}</code></pre>
+        </aside>
+
+        <p>
+          Hello! I am a student from Cairo, Egypt, studying Business
+          Information Systems at Capital University. I enjoy turning ideas
+          into working software and learning how technology solves real
+          business problems.
+        </p>
+        <p>
+          I joined SCCI as a participant, first as a member of the Devology team
+          and later as its team leader. Together we built "Halo", a smart
+          home-safety car website, and won first place at the SCCI Conference.
+          I also worked with other teammates on "Colleague", a
+          college guidance platform for Egyptian high school students.
+        </p>
+        <p>
+          Now I am a third-year student and an IT member at SCCI. I am no longer
+          a participant: I am working on the SCCI website system, building both
+          its front-end and its back-end.
+        </p>
+        <p>
+          In August 2026 I also completed a one-month internship at Crédit
+          Agricole Egypt, in the City Stars branch.
+        </p>
+        <p>
+          I also completed two Innovation Area tracks in 2026: Programming and
+          Artificial Intelligence, and Public Relations and Soft Skills. Right
+          now I am focused on growing my web development and data skills.
+        </p>
+      </section>
+
+      <section class="section" id="certificates" aria-labelledby="certificates-heading">
+        <p class="eyebrow">Proof of work</p>
+        <h2 class="section-title" id="certificates-heading">Certificates</h2>
+        <p class="section-subtitle">Training, events, and awards from 2026. Click a certificate to see it full size.</p>
+
+        <div class="certs-grid">
+          <article class="card cert-card">
+            <a href="assets/images/credit-agricole-internship.jpg" target="_blank" rel="noopener">
+              <img class="cert-img" src="assets/images/credit-agricole-internship.jpg" alt="Certificate of Internship from Crédit Agricole Egypt, City Stars Branch, August 2 to 31, 2026" width="1400" height="1008" loading="lazy">
+            </a>
+            <div class="card-body">
+              <span class="tag">Internship</span>
+              <h3>Certificate of Internship</h3>
+              <p>Crédit Agricole Egypt, City Stars Branch. August 2 to 31, 2026.</p>
+            </div>
+          </article>
+
+          <article class="card cert-card">
+            <a href="assets/images/scci-winning-team-2026.jpg" target="_blank" rel="noopener">
+              <img class="cert-img" src="assets/images/scci-winning-team-2026.jpg" alt="SCCI certificate of achievement for the winning team of SCCI 2026" width="1400" height="953" loading="lazy">
+            </a>
+            <div class="card-body">
+              <span class="tag">Award</span>
+              <h3>Winning Team, SCCI 2026</h3>
+              <p>Certificate of Achievement for exceptional achievement, dedication, and commitment to excellence during SCCI 2026.</p>
+            </div>
+          </article>
+
+          <article class="card cert-card">
+            <a href="assets/images/innovation-programming-ai.jpg" target="_blank" rel="noopener">
+              <img class="cert-img" src="assets/images/innovation-programming-ai.jpg" alt="Innovation Area certificate of appreciation for completing the Programming and AI track" width="1400" height="988" loading="lazy">
+            </a>
+            <div class="card-body">
+              <span class="tag">Training</span>
+              <h3>Programming and AI Track</h3>
+              <p>Innovation Area, Innovation Training Program 8th Edition. Completed with full commitment, 2026.</p>
+            </div>
+          </article>
+
+          <article class="card cert-card">
+            <a href="assets/images/innovation-pr-soft-skills.jpg" target="_blank" rel="noopener">
+              <img class="cert-img" src="assets/images/innovation-pr-soft-skills.jpg" alt="Innovation Area certificate of appreciation for completing the PR and Soft Skills track" width="1400" height="995" loading="lazy">
+            </a>
+            <div class="card-body">
+              <span class="tag">Training</span>
+              <h3>PR and Soft Skills Track</h3>
+              <p>Innovation Area, Innovation Training Program 8th Edition. Completed with full commitment, 2026.</p>
+            </div>
+          </article>
+
+          <article class="card cert-card">
+            <a href="assets/images/scci-academic-event.jpg" target="_blank" rel="noopener">
+              <img class="cert-img" src="assets/images/scci-academic-event.jpg" alt="SCCI certificate of achievement for participation in The Academic Event" width="1400" height="1009" loading="lazy">
+            </a>
+            <div class="card-body">
+              <span class="tag">Event</span>
+              <h3>The Academic Event</h3>
+              <p>SCCI Certificate of Achievement, in recognition of valuable participation in The Academic Event.</p>
+            </div>
+          </article>
+
+          <article class="card cert-card">
+            <a href="assets/images/scci-devology-workshop.jpg" target="_blank" rel="noopener">
+              <img class="cert-img" src="assets/images/scci-devology-workshop.jpg" alt="SCCI certificate of completion for the Devology workshop" width="1400" height="955" loading="lazy">
+            </a>
+            <div class="card-body">
+              <span class="tag">Workshop</span>
+              <h3>Devology Workshop</h3>
+              <p>SCCI Certificate of Completion for successfully completing the Devology workshop.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+
+      <section class="section" id="contact" aria-labelledby="contact-heading">
+        <p class="eyebrow">Let's connect</p>
+        <h2 class="section-title" id="contact-heading">Get In Touch</h2>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p>
+              Interested in working together, or just want to say hello?
+              Send me a message and I will get back to you.
+            </p>
+            <ul class="channels">
+              <li>
+                <span class="channel-label">Email</span>
+                <a href="mailto:jumanamutaz2006@gmail.com">jumanamutaz2006@gmail.com</a>
+              </li>
+              <li>
+                <span class="channel-label">Location</span>
+                <span>Nasr City, Cairo, Egypt</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- The form opens the visitor's email app, because this page has no server -->
+          <form class="contact-form" action="mailto:jumanamutaz2006@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What is this about?">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+
+            <button class="btn" type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Thank you for visiting my page!</p>
+      <p>Jumana Moutaz | Business Information Systems | Capital University</p>
+    </footer>
+  </body>
+</html>
